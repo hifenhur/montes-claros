@@ -1,0 +1,80 @@
+
+<div class="segura-conteudo">
+    
+    <div class="conteudo internas">
+
+
+
+
+            <div class="movies-list-page">
+                <div class="page-wrapper">
+                    <div class="page-title">Cinema</div>
+                    <div class="page-content">
+                        <ul class="movies-list">
+<% @filmes.each do |f|%>
+                            <li class="clearfix">
+                                <div class="movie-poster"><img width="190" src="<%= f.imagem %>" /></div>
+                                <div class="movie-infos">
+                                    <div class="movie-name-presence clearfix">
+                                        <div class="movie-name"><%= f.titulo%></div>
+                                        <div class="movie-presence">
+                                            <div class="presenca"><a href="/aumentar/<%= f.id%>" data-remote="true" class="btnpresenca"><span>Confirme sua presença</span></a><div class="counter-presenca"><span class="<%= f.id%>"><%= f.presenca%></span></div></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="movie-share clearfix">
+                                        <div class="addthis_toolbox addthis_default_style">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet" style="width: 90px"></a>                
+                                            <a class="addthis_counter addthis_pill_style"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="movie-sinopse">
+                                        <div class="title">SINOPSE</div>
+                                        <div class="text"><%= truncate(f.sinopse, :length => 400, :separator => ' ') %></div>
+                                    </div>
+                                    
+                                    <ul class="movie-rooms clearfix">
+   
+                                        <li class="column-type-1 column-type-1-1"><strong>Salas</strong>
+                                            <%f.salas.each do |s|%> 
+                                                <br /><%= s.nome%>
+                                            <%end %>
+
+                                        </li>
+                                        <li class="column-type-1"><strong>Tipo</strong>
+                                            <%f.salas.each do |s|%>
+                                                <%if s.tresD %> 
+                                                    <br /><%= "3D"%>
+                                                <%else%>
+                                                    <br /><%= "2D"%>
+                                                <%end %>
+                                            <%end %>
+
+                                        </li>
+                                        <li class="column-type-1"><strong>Gênero</strong>:<br /><%= f.genero%></li>
+                                        <li class="column-type-1 last"><strong>Classificação</strong>:<br /><%= f.classificacao %></li>
+                                        <li class="see-more"><a href="<%= filme_path(f)%>" title=""><img src="/assets/see-more-button.png" /></a></li>
+                                        
+                                    </ul>
+                                    
+                                </div>
+                            </li>
+<%end%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </div>      
+            
+    <div class="clear"></div>           
+</div>
+    
+
+
+

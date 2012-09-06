@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  email: MyString
+  comentario: MyText
+  filme: 
+  autorizado: false
+
+two:
+  nome: MyString
+  email: MyString
+  comentario: MyText
+  filme: 
+  autorizado: false

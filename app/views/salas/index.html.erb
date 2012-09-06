@@ -1,0 +1,47 @@
+<h1>Listing salas</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Fh1</th>
+    <th>Fh2</th>
+    <th>Fh3</th>
+    <th>Fh4</th>
+    <th>Fh5</th>
+    <th>Sh1</th>
+    <th>Sh2</th>
+    <th>Sh3</th>
+    <th>Sh4</th>
+    <th>Sh5</th>
+    <th>Legendado</th>
+    <th>Tresd</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @salas.each do |sala| %>
+  <tr>
+    <td><%= sala.nome %></td>
+    <td><%= sala.fh1 %></td>
+    <td><%= sala.fh2 %></td>
+    <td><%= sala.fh3 %></td>
+    <td><%= sala.fh4 %></td>
+    <td><%= sala.fh5 %></td>
+    <td><%= sala.sh1 %></td>
+    <td><%= sala.sh2 %></td>
+    <td><%= sala.sh3 %></td>
+    <td><%= sala.sh4 %></td>
+    <td><%= sala.sh5 %></td>
+    <td><%= sala.legendado %></td>
+    <td><%= sala.tresD %></td>
+    <td><%= link_to 'Show', sala %></td>
+    <td><%= link_to 'Edit', edit_sala_path(sala) %></td>
+    <td><%= link_to 'Destroy', sala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sala', new_sala_path %>

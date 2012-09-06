@@ -1,0 +1,189 @@
+
+
+<div class="segura-conteudo">
+  
+  <div class="conteudo internas">
+
+
+
+
+            <div class="about-page">
+                <div class="page-wrapper">
+                    <div class="page-title">
+                        <b>IMPRENSA</b>
+                        <div class="page-share clearfix">
+                            <div class="addthis_toolbox addthis_default_style">
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                <a class="addthis_button_tweet" style="width: 90px;"></a>       
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content clearfix">
+                        <div class="column-left">                            
+                            <div class="page-text">
+                                <p><img src="<%=@imprensa.imagem%>" /></p>
+                                <p><%= @imprensa.conteudo%></p> 
+                            </div>
+                            
+                            <div class="form-title" style="margin-bottom: 8px;">Arquivos para download</div>
+                            
+                            <ul class="down-list clearfix">
+                                <li><a href=".Janeiro" title="" class="current">JAN</a></li>
+                                <li><a href=".Fevereiro" title="">FEV</a></li>
+                                <li><a href=".Marco" title="">MAR</a></li>
+                                <li><a href=".Abril" title="">ABR</a></li>
+                                <li><a href=".Maio" title="">MAI</a></li>
+                                <li><a href=".Junho" title="">JUN</a></li>
+                                <li><a href=".Julho" title="">JUL</a></li>
+                                <li><a href=".Agosto" title="" >AGO</a></li>
+                                <li><a href=".Setembro" title="">SET</a></li>
+                                <li><a href=".Outubro" title="">OUT</a></li>
+                                <li><a href=".Novembro" title="">NOV</a></li>
+                                <li class="last"> <a href=".Dezembro" title="">DEZ</a></li>
+                            </ul>
+                            
+                            <ul class="events-list">
+                                <% @downloadsJaneiro.each do |d|%>
+                                <li class="Janeiro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Jan</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsFevereiro.each do |d|%>
+                                <li class="Fevereiro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Fev</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsMarco.each do |d|%>
+                                <li class="Marco">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Mar</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsAbril.each do |d|%>
+                                <li class="Abril">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Abr</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsMaio.each do |d|%>
+                                <li class="Maio">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Mai</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsJunho.each do |d|%>
+                                <li class="Junho">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Jun</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsJulho.each do |d|%>
+                                <li class="Julho">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Jul</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsAgosto.each do |d|%>
+                                <li class="Agosto">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Ago</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsSetembro.each do |d|%>
+                                <li class="Setembro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Set</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsOutubro.each do |d|%>
+                                <li class="Outubro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Out</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsNovembro.each do |d|%>
+                                <li class="Novembro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Nov</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+                                <% @downloadsDezembro.each do |d|%>
+                                <li class="Dezembro">
+                                    <div class="event-date-title">
+                                        <div class="event-date"><div class="day"><%= d.created_at.strftime('%e')%></div><div class="month">Dez</div></div>
+                                        <div class="event-title"><%= d.titulo %></div>
+                                        <div class="event-btn"><a href="<%= d.arquivo %>" title=""><img src="/assets/down-btn.png" /></a></div>
+                                    </div>
+                                </li>
+                                <%end%>
+
+                                
+                            </ul>
+                            
+                            <div class="form-title">Para maiores informações</div>
+                            
+                        <%= render 'informacaos/form'%>
+                        </div>
+                        
+                       <%= render 'informacaos/menu'%>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+  </div>    
+      
+  <div class="clear"></div>     
+</div>
+
+<script type="text/javascript">
+$('.imprensa').addClass('current');
+$('.events-list li').hide();
+$('.Janeiro').show();
+$('.down-list li a').click(function(e){
+    e.preventDefault()
+    $('.down-list a.current').removeClass('current');
+    $(this).addClass('current');
+    $('.events-list li').hide();
+    var atual = $(this).attr('href');
+    $(atual).fadeIn();
+});
+</script>

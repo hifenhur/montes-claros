@@ -1,0 +1,106 @@
+<%= %>
+
+<div class="segura-conteudo">
+    
+    <div class="conteudo internas">
+
+
+
+
+            <div class="workus-page">
+                <div class="page-wrapper">
+                    <div class="page-title">
+                        <b>Trabalhe Conosco</b> <span><span></span>Faça parte da nossa equipe</span>
+                        <div class="page-share clearfix">
+                            <div class="addthis_toolbox addthis_default_style">
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                <a class="addthis_button_tweet" style="width: 90px;"></a>               
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content clearfix">
+                        <div class="column-left">                            
+                            <form method="post" action="<%= curriculos_path %>" data-remote="true" id="lazer-form" enctype="multipart/form-data">
+                                <div class="top-bg"></div>
+                                <div class="middle-bg">
+                                    <div class="row row-1 clearfix">
+                                        <div class="left"><input type="text" name="curriculo[nome]" id="" placeholder="Digite aqui o seu nome:" /></div>
+                                        <div class="right"><input type="text" name="curriculo[telefone]" id="" placeholder="Telefones para contato:" /></div>
+                                    </div>
+                                    <div class="row row-2 clearfix">
+                                        <div class="left"><input type="text" name="curriculo[email]" id="" placeholder="Digite aqui o seu e-mail:" /></div>
+                                        <div class="right"><input type="text" name="curriculo[cep]" id="" placeholder="CEP:" /></div>
+                                    </div>
+                                    <div class="row row-3 clearfix">
+                                        <div class="left"><input type="text" name="curriculo[endereco]" id="" placeholder="Endereço:" /></div>
+                                        <div class="right"><input type="text" name="curriculo[complemento]" id="" placeholder="Complemento:" /></div>
+                                    </div>
+                                    <div class="row row-4 clearfix">
+                                        <div class="left">
+                                            <select id="estado" name="curriculo[estado]" id="">
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="left">
+                                            <select id="cidade" name="curriculo[cidade]" id="">
+                                                
+                                            </select>
+                                        </div>
+                                        <div class="left last">
+                                            <select name="curriculo[area_de_atuacao]" id="">
+                                                <option disabled="disabled" selected="selected">Área de atuação:</option>
+                                                <option>Item</option>
+                                                <option>Item</option>
+                                                <option>Item</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row row-6">
+                                        <textarea name="curriculo[descricao]" id="" placeholder="Fale um pouco sobre voce?"></textarea>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="left ipfile" style="color: #4f4f4f; font: 13px Signika;"><input type="file" name="curriculo[documento]" /></div>
+                                        <div class="right"><div class="submit-btn"><button type="submit"></button></div></div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="bottom-bg"></div>
+                            </form>
+                        </div>
+                        
+                       <%= render 'informacaos/menu'%>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </div>      
+            
+    <div class="clear"></div>           
+</div>
+    
+
+<script src="/assets/jquery.filestyle.mini.js"></script>
+<script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-1.2-utf8.js"></script>
+<script>
+( function( $ ) {
+    $( function() {
+        $('input[type=file]').filestyle({ image: '/assets/search-btn.png', imageheight : 27, imagewidth : 73, width : 250 }); 
+    } );
+} )( jQuery );
+
+$('.trabalhe').addClass('current');
+
+$(function() {
+  new dgCidadesEstados({
+    estado: $('#estado').get(0),
+    cidade: $('#cidade').get(0)
+  });
+});
+
+</script>
+

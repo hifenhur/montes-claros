@@ -1,0 +1,54 @@
+<div class="segura-conteudo">
+  
+  <div class="conteudo internas">
+
+
+
+
+            <div class="houropen-page">
+                <div class="page-wrapper">
+                    <div class="page-title">
+                        Horários de Funcionamento
+                        <div class="page-share clearfix">
+                            <div class="addthis_toolbox addthis_default_style">
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                <a class="addthis_button_tweet" style="width: 90px"></a>        
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content clearfix">
+                        <div class="column-left">
+                            <div class="page-text">
+                                <div class="image"><img src="/assets/deletar-depois/event-image-big-ex-2.jpg" /></div>
+                                <div class="text">
+                                  <% @horario.horario_infs.each do |h|%>
+                                    <p class="name"><%= h.nome %></p>
+                                    <p><%= h.informacao %></p>
+                                  <%end%>
+                                </div>
+                            </div>
+                            
+                            <div class="form-title">Para maiores informações</div>
+                            
+                            <%= render 'informacaos/form'%>
+                        </div>
+                        
+                        <%= render 'informacaos/menu'%>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+  </div>    
+      
+  <div class="clear"></div>     
+</div>
+  
+<script type="text/javascript">
+$('.horarios').addClass('current');
+</script>
+
+

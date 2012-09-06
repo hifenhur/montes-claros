@@ -1,0 +1,15 @@
+<%= semantic_form_for @sala do |f| %>
+
+    <%= f.inputs %>
+    <%= f.buttons %>
+	    
+<% end %>
+
+<% @sala.horarios.each do |h|%>
+	<%= semantic_form_for h do |j|%>
+	   	<%= j.input :filme %>
+	   	<%= j.input :hora_inicio %>
+	   	<%= j.buttons %>
+	<% end %>
+<%end%>
+

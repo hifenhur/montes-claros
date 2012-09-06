@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ingresso.nome %>
+</p>
+
+<p>
+  <b>Meia:</b>
+  <%= @ingresso.meia %>
+</p>
+
+<p>
+  <b>Inteira:</b>
+  <%= @ingresso.inteira %>
+</p>
+
+
+<%= link_to 'Edit', edit_ingresso_path(@ingresso) %> |
+<%= link_to 'Back', ingressos_path %>

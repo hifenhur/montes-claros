@@ -1,0 +1,27 @@
+<h1>Listing horario_infs</h1>
+
+<table>
+  <tr>
+    <th>Horario</th>
+    <th>Nome</th>
+    <th>Informacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @horario_infs.each do |horario_inf| %>
+  <tr>
+    <td><%= horario_inf.horario %></td>
+    <td><%= horario_inf.nome %></td>
+    <td><%= horario_inf.informacao %></td>
+    <td><%= link_to 'Show', horario_inf %></td>
+    <td><%= link_to 'Edit', edit_horario_inf_path(horario_inf) %></td>
+    <td><%= link_to 'Destroy', horario_inf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Horario inf', new_horario_inf_path %>

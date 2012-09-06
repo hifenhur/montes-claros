@@ -1,0 +1,29 @@
+<div class="sidebar">
+                            <ul class="nav">
+                                <li class="sobre" ><a href="<%= o_shoppings_path%>" title="">O SHOPPING</a></li>
+                                <li class="comercializacao" ><a href="<%= comercializacaos_path%>" title="">COMERCIALIZAÇÃO</a></li>
+                                <li class="imprensa" ><a href="<%= imprensas_path %>" title="">IMPRENSA</a></li>
+                                <li class="trabalhe" ><a href="<%= curriculos_path%>" title="">TRABALHE CONOSCO</a></li>
+                                <li class="localizacao" ><a href="<%= localizacao_path %>" title="">LOCALIZAÇÃO</a></li>
+                                <li class="horarios" ><a href="<%= horarios_path%>" title="">HORÁRIOS DE FUNCIONAMENTO</a></li>
+                                <li class="informacoes" ><a href="<%= informacaos_path%>" title="">CONTATO</a></li>
+                            </ul>
+
+                            <div>
+                                <h2 class="right-collun-title" style="margin-top: 10px">Se ligue nas promoções</h2>
+                                <img src="/assets/seliga-promo-top.png" />
+
+                                <form class="seliga-promo" action="<%= newsletters_path %>" method="post" data-remote="true" >
+                                    <p>Cadastre-se e receba informes, noticias e fica por dentro e participe das nossas promoções.</p>
+
+                                    <label><input name="newsletter[nome]" type="text" value="Digite aqui o seu nome:" /></label>
+                                    <label><input name="newsletter[email]" type="text" value="Digite aqui o seu e-mail:" /></label>
+                                    <label style="margin: 0;">
+                                        <button type="submit" class="btn-secundary right"><span>Enviar</span></button>
+                                        <div class="clear"></div>
+                                    </label>
+                                </form>
+
+                                <img src="/assets/seliga-promo-bot.png" />
+                            </div>
+                        </div>

@@ -1,0 +1,25 @@
+<h1>Listing comercio_galeries</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Comercializacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comercio_galeries.each do |comercio_galery| %>
+  <tr>
+    <td><%= comercio_galery.image %></td>
+    <td><%= comercio_galery.comercializacao %></td>
+    <td><%= link_to 'Show', comercio_galery %></td>
+    <td><%= link_to 'Edit', edit_comercio_galery_path(comercio_galery) %></td>
+    <td><%= link_to 'Destroy', comercio_galery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comercio galery', new_comercio_galery_path %>

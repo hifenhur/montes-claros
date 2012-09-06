@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping</title>
+  <link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= stylesheet_link_tag    "bgslider", :media => "all" %>
+  <%= stylesheet_link_tag    "jquery.mCustomScrollbar", :media => "all" %>
+  <%= stylesheet_link_tag    "uniform.default", :media => "all" %>
+  <%= stylesheet_link_tag    "jquery.fancybox", :media => "all" %>
+
+
+  
+ 
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "active_admin" %>
+  <%= javascript_include_tag "bgslider" %>
+  <%= javascript_include_tag "jquery-ui-1.8.22.custom.min" %>
+  <%= javascript_include_tag "jquery.bxSlider" %>
+  <%= javascript_include_tag "jquery.cycle.all" %>
+  <%= javascript_include_tag "jquery.easing.1.3" %>
+  <%= javascript_include_tag "jquery.filestyle.mini" %>
+  <%= javascript_include_tag "jquery.mCustomScrollbar" %>
+  <%= javascript_include_tag "jquery.mousewheel.min" %>
+  <%= javascript_include_tag "jquery.uniform" %>
+  <%= javascript_include_tag "less-1.3.0.min" %>
+  <%= javascript_include_tag "scripts" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="segura-topo">
+	<div class="topo">
+		
+		<h1 class="logomarca">
+			<a href="<%= root_path%>"></a>
+		</h1>
+		
+		<ul class="atendimento-redes-topo">
+			<li class="atendimento">
+				<a href="javascript:;" class="horario left"></a>
+				<a href="<%= horarios_path %>" class="left">
+					Horário de funcionamento
+				</a>
+				<div class="clear"></div>			
+			</li>
+			
+			<li class="como-chegar">
+				<a href="<%= localizacao_path %>" class="left pin"></a>
+				<a href="<%= localizacao_path %>" class="left">Como chegar</a>
+				<div class="clear"></div>
+			</li>
+			
+			<ul class="redes">
+				<li>
+					<a href="javascript:;" class="fb"></a>
+				</li>
+				<li>
+					<a href="javascript:;" class="tw"></a>
+				</li>
+				<li>
+					<a href="javascript:;" class="ok"></a>
+				</li>
+				<li>
+					<a href="javascript:;" class="bl"></a>
+				</li>								
+			</ul>
+		</ul>
+		
+		<ul class="menu">
+			<li>
+				<a href="<%= sobre_path %>">O Shopping </a>
+			</li>
+			<li>
+				<a href="<%= filmes_path%>">Cinema</a>
+			</li>
+			<li>
+				<a href="<%= lojas_path%>">Lojas</a>
+			</li>
+			<li>
+				<a href="<%= loja_alimentacaos_path%>">Alimentação</a>
+			</li>
+			<li>
+				<a href="<%= lazers_path %>">Lazer</a>
+			</li>
+			<li>
+				<a href="<%= events_path %>">Eventos</a>
+			</li>
+			<li>
+				<a href="<%= notices_path%>">Notícias </a>
+			</li>
+			<li>
+				<a href="<%= servicos_path %>">Serviços</a>
+			</li>
+			
+			<li>
+				<a href="<%= informacaos_path %>">Contato</a>
+			</li>
+		</ul>
+		
+		<div class="clear"></div>		
+		
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+	var slideshowSpeed = 4000;
+	var photos = [ 
+	<% @imagem.each_with_index do |i, index|%>
+		<%if index > 0 %>
+		,
+		<%end%>
+		{
+				"title" : "<%= i.created_at%>",
+				"image" : "<%= i.imagem %>",
+				"url" : "#",
+				"firstline" : " ",
+				"secondline" : " "
+			}
+	<%end %>
+	];
+</script>
+<script type="text/javascript" src="/assets/bgslider.js"></script>
+
+<div class="segura-banner">
+	<div id="headerimgs">
+		<div id="headerimg1" class="headerimg"></div>
+		<div id="headerimg2" class="headerimg"></div>
+	</div>
+</div>
+
+<div class="segura-serch-bar">
+	<div class="serch-bar">
+		<form class="procurar" action="<%= search_index_path %>" >
+			<label>
+				<input type="text" value="Faça sua BUSCA aqui" name="search" />
+				<span class="lupa"></span>
+			</label>
+		</form>	
+
+
+	
+		
+		<ul class="navegacao-banner">
+			
+			<%@imagem.each do %>
+			<li><a href="javascript:;"></a></li>
+			<%end%>
+		</ul>
+		
+		<div class="clear"></div>				
+	</div>
+</div>
+
+
+
+<%= yield %>
+<div class="segura-bloco-triplo">
+	<div class="bloco">
+		<h1 class="titulo">
+			Lojas em destaque
+		</h1>
+		<div class="lojaDestaques">
+			<div class="slide">
+				<%@lojas_em_destaque.each do |l|%>
+				<a href="<%= l.link%>">
+					<img src="<%= l.imagem %>" width="265" height="104"/>
+				</a>
+				<%end%>
+			</div>
+		</div>
+		<form class="newsletter" action="<%= newsletters_path %>" method="post" data-remote="true" >
+			<h1 class="titulo">Newsletter</h1><br/>
+			<label>
+				<input name="newsletter[nome]" type="text" value="Digite seu nome:"/>					
+			</label>
+			<label>
+				<input name="newsletter[email]" type="text" value="Digite seu e-mail:"/>					
+			</label>
+			<label class="enviar">
+				<input type="image" src="/assets/enviar-newsletter.png" type="submit"/>
+			</label>
+			
+		</form>
+		
+	</div>
+	<div class="bloco" style="width: 310px;">
+		<script type="text/javascript">init_twitter_tts();</script>	
+		<ul class="twitterblock">
+			<a href="https://twitter.com/google" class="twitter-follow-button" data-show-count="false">Follow @google</a>
+			<script>
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0];
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;
+					js.src="//platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document,"script","twitter-wjs");
+			</script>														
+		</ul>
+		<a href="https://www.twitter.com/redeqg" class="btn-seguir" target="_blank"></a>			
+	</div>
+	<div class="bloco facebookblock" >
+		<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fgoogle&amp;width=310&amp;height=335&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23ebebeb&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:310px; height:335px;" allowTransparency="true"></iframe>	
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="segura-ropade">
+		
+	<div class="rodape">
+		<h5>Shoppings do grupo</h5>
+		<ul class="shoppings-do-grupo">
+			<li>
+				<a href="javascript:;">
+					<img src="/assets/sg-as.png" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="/assets/sg-sr.png" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="/assets/sg-ps.png" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="/assets/sg-js.png" />
+				</a>
+			</li>
+						
+		</ul>
+	
+		<ul class="endereco-tmt">
+			<li class="endereco">
+				<h3>
+					<span><%= @footer.nome_do_shopping %></span>
+					<%= @footer.endereco %><br/>
+					CEP: <%= @footer.cep%>
+				</h3> 
+			</li>
+			<li>
+				<h3>
+					<span>Atendimento ao cliente</span>
+					<%= @footer.email_sac%><br/>
+					<%= @footer.telefone%>
+				</h3> 
+			</li>
+			<li class="logo">
+				<img src="/assets/sfamalls.png" />
+				<h1 class="tmt">
+				<a href="javascript:;">
+					<img src="/assets/tmtpart.png" />
+				</a>
+				</h1>
+			</li>
+			<div class="clear"></div>
+		</ul>
+	</div>	
+	
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-501844af04cf4b7e"></script>
+</body>
+</html>
+

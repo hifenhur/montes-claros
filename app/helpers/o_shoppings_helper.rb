@@ -1,0 +1,2 @@
+module OShoppingsHelper
+end

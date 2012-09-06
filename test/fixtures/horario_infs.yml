@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  horario: 
+  nome: MyString
+  informacao: MyString
+
+two:
+  horario: 
+  nome: MyString
+  informacao: MyString

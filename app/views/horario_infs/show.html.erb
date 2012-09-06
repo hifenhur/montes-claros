@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Horario:</b>
+  <%= @horario_inf.horario %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @horario_inf.nome %>
+</p>
+
+<p>
+  <b>Informacao:</b>
+  <%= @horario_inf.informacao %>
+</p>
+
+
+<%= link_to 'Edit', edit_horario_inf_path(@horario_inf) %> |
+<%= link_to 'Back', horario_infs_path %>

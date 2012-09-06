@@ -1,0 +1,138 @@
+
+
+<div class="segura-conteudo">
+  
+  <div class="conteudo internas">
+
+
+
+
+            <div class="about-page">
+                <div class="page-wrapper">
+                    <div class="page-title">
+                        <b>O Shopping</b> <span><span></span><%= @shopping.subtitulo %></span>
+                        <div class="page-share clearfix">
+                            <div class="addthis_toolbox addthis_default_style">
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                <a class="addthis_button_tweet" style="width: 90px;"></a>       
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content clearfix">
+                        <div class="column-left">                            
+                            <div class="page-text">
+                                <p><img src="<%= @shopping.imagem%>" /></p>
+                                <p><%= @shopping.conteudo %></p>
+                            </div>
+                            
+                            <div id="slider-wrapper">
+                                <div class="slider-top"></div>
+                                <div class="slider-middle">
+                                    <div id="slider">
+                                        <li>
+                                            <ul>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                                <li><a href="/assets/deletar-depois/slider-ex.jpg" rel="sliderGal"><img src="/assets/deletar-depois/slider-ex.jpg" /></a></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                    
+                                    <a href="javascript:void(0);" title="<" class="prev"></a>
+                                    <a href="javascript:void(0);" title=">" class="next"></a>
+                                </div>
+                                <div class="slider-bottom"></div>
+                            </div>
+                            
+                            <div class="form-title">Comentários</div>
+                            
+                            <ul class="cmm-list">
+                              <% @shopping.shopping_comments.each do |c|%>
+                                  <%if c.aceito%>
+                                    <li>
+                                        <div class="rrow clearfix">
+                                            <div class="avatar"><img src="/assets/avatar-ex.png" /></div>
+                                            <div class="cmm">
+                                                <div class="cmm-name"><%= c.nome %></div>
+                                                <div class="cmm-text"><%= c.comentario %></div>
+                                            </div>
+                                        </div>
+                                        <div class="share-respond">
+                                            <a href="" title="">Curtir</a>
+                                            <a href="" title="">Responder</a>
+                                        </div>
+                                    </li>
+                                    <%end%>
+                                <%end%>
+                            </ul>
+                            
+                            <div class="form-title2">Deixe seu comentário</div>
+                            
+                            <form method="post" action="/o_shoppings/<%= @shopping.id%>/shopping_comments" data-remote="true" id="lazer-form">
+                                <div class="top-bg"></div>
+                                <div class="middle-bg">
+                                    <div class="row row-1 clearfix">
+                                        <div class="left">
+                                            <input type="text" name="shopping_comment[nome]" id="" placeholder="Digite aqui o seu nome:" /><br />
+                                            <input type="text" name="shopping_comment[email]" id="" placeholder="Digite aqui o seu e-mail:" />
+                                        </div>
+                                        <div class="right"><textarea name="shopping_comment[comentario]" id="" placeholder="Digite aqui o seu comentário:"></textarea></div>
+                                    </div>
+                                    <div class="submit-btn"><button type="submit"></button></div>
+                                </div>
+                                <div class="bottom-bg"></div>
+                            </form>
+                        </div>
+                        
+                        <%= render 'informacaos/menu'%>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+  </div>    
+      
+  <div class="clear"></div>     
+</div>
+
+<script src="/assets/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="/assets/jquery.cycle.all.js"></script>
+<script src="fancybox/jquery.fancybox.pack.js"></script>
+
+<script>
+( function( $ ) {
+    $( function() {
+        $( '#slider' ).cycle( {
+            easing : 'easeInOutBack',
+            fx : 'scrollHorz',
+            manualTrump : false,
+            speed : 1200,
+            timeout : 12 * 1000,
+            prev : $( '#slider-wrapper .prev' ),
+            next : $( '#slider-wrapper .next' )
+        } ).find( 'a' ).fancybox();
+    } );
+} )( jQuery );
+$('.sobre').addClass('current');
+</script>
+

@@ -1,0 +1,21 @@
+<%= form_for(@categoria_alimentacao) do |f| %>
+  <% if @categoria_alimentacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@categoria_alimentacao.errors.count, "error") %> prohibited this categoria_alimentacao from being saved:</h2>
+
+      <ul>
+      <% @categoria_alimentacao.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

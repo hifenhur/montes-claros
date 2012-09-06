@@ -1,0 +1,62 @@
+<% @genero = ['Drama','Romance'] %>
+<% @classificacao = ['Livre','18+'] %>
+
+<%= semantic_form_for @filme do |f| %>
+	<%= f.inputs "Dados do Filme" do%>
+	    <%= f.input :titulo %>
+	    <%= f.input :home_slider %>
+	    <%= f.input :genero, :as => :select, :collection => @genero %>
+	    <%= f.input :classificacao, :as => :select, :collection => @classificacao %>
+	    <%= f.input :trailer %>
+	    <%= f.input :imagem %>
+	    <%= f.input :homeimage %>
+	    <%= f.input :elenco %>
+	    <%= f.input :sinopse %>
+	    
+    <%end%>
+
+    <%= link_to 'nova sala', new_admin_sala_path %>
+    
+    	<%= f.semantic_fields_for :salas do |s| %>
+    		<% @filme.salas.each do |sala| %>
+		    		<fieldset class="inputs horario">
+		    			<h1><%= sala.nome %></h1>
+		    			<%= s.inputs "Dados da Sala" do%>
+			    			<%=s.input :nome %>
+			    			<%=s.input :legendado %>
+			    			<%=s.input :tresD, :label => " 3D " %>
+			    		<%end%>
+		    			<%=s.inputs "Horarios de Segunda-Quinta", :class => "color" do %>
+					        <%=s.input :fh1, :label => " - "%>
+					        <%=s.input :fh2, :label => " - "%>
+					        <%=s.input :fh3, :label => " - "%>
+					        <%=s.input :fh4, :label => " - "%>
+					        <%=s.input :fh5, :label => " - "%>
+					        
+					    <% end %>
+					    <%=s.inputs "Horarios de Sexta-Domingo e Feriados", :class => "color" do %>
+					        
+					        
+					        <%=s.input :sh1, :label => " - " %>
+					        <%=s.input :sh2, :label => " - "%>
+					        <%=s.input :sh3, :label => " - "%>
+					        <%=s.input :sh4, :label => " - "%>
+					        <%=s.input :sh5, :label => " - "%>
+					    <% end %>
+		    			<%= link_to 'DELETAR', admin_sala_path(sala), :method => :delete  %>
+		    		</fieldset>
+		    		
+    			
+    	<%end%>
+
+    <%end%>
+
+    
+    
+
+  	<%= f.buttons %>
+
+
+
+<% end %>
+

@@ -1,0 +1,25 @@
+<%= form_for(@comercio_galery) do |f| %>
+  <% if @comercio_galery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comercio_galery.errors.count, "error") %> prohibited this comercio_galery from being saved:</h2>
+
+      <ul>
+      <% @comercio_galery.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :comercializacao %><br />
+    <%= f.text_field :comercializacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<li class="resultado">
+	<a href="<%= event_path(event)%>">
+		<div class="event-date-title">
+			<div class="event-title">EVENTOS - <%= event.titulo %></div>
+		</div>
+			                                
+		<div>
+			<div class="event-text resultado">
+			<p><%= raw truncate(event.descricao, :length => 300, :separator => " ") %></p>
+			</div>
+		</div>
+	</a>
+</li>

@@ -1,0 +1,60 @@
+<div class="segura-conteudo background-home">
+	
+	<div class="conteudo home">
+		
+		<div class="colLeft">
+			<h1 class="titulo cinema">
+				cinema
+			</h1>
+			<div class="destaques-cinema">
+				<img src="/assets/cinema-destaques-top.png" width="611" height="6" />
+				<div class="ctn">
+					<ul class="destaque-cinema-images">
+						<% @filmes.each do |f|%>
+						<a href="<%= filme_path(f)%>">
+							<img src="<%= f.homeimage %>" width="597" height="222" /assets/>
+						</a>
+						<%end%>
+						
+					</ul>
+					<ul class="list-destaques-cinema">
+						<% @filmes.each do |f|%>
+						<li>
+							<a href="<%= filme_path(f)%>" class="titulo">
+								<span class="icon"></span>
+								<h2 class="titulo"><%= truncate(f.titulo, :length => 50, :separator => ' ') %></h2>
+								<br class="clear"/>
+								<p>Dublado Legendado 3D</p>
+								<br class="clear"/>								
+							</a>
+							<a href="<%= filme_path(f)%>" class="saiba-mais">saiba mais</a>
+						</li>
+						<%end%>
+					</ul>
+					<div class="clear"></div>				
+				</div>
+				<img src="/assets/cinema-destaques-bot.png" width="611" height="20" />				
+			</div>		
+		</div>
+		
+		<div class="colRight">
+			<h1 class="titulo-grande">
+				Fique por dentro<br/>das NOVIDADES
+			</h1>
+			
+			<ul class="list-eventos">
+				<%@eventos.each do |e|%>
+				<li>
+					<a href="<%= event_path(e)%>">
+						<h2 class="titulo"><%= e.created_at.strftime("%d/%m")%> - <%= e.titulo %></h2><br/>
+						<p><%=  raw truncate(e.descricao, :length => 140, :separator => ' ') %></p>
+					</a>
+				</li>
+				<%end%>
+			</ul>
+		</div>
+		<div class="clear"></div>
+			
+	</div>
+	
+</div>

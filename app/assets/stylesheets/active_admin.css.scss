@@ -1,0 +1,39 @@
+// Active Admin CSS Styles
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// To customize the Active Admin interfaces, add your
+// styles here:
+.cke_skin_kama .cke_editor{
+	width:auto !important;
+}
+
+.horario label {
+    width: 35px;
+}
+.horario fieldset li {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.color ol li {
+    color: #e1e1e1;
+}
+.horario fieldset li input {
+    width: 40px;
+    float: left;
+}
+.horario fieldset {
+    float: left;
+    height: auto;
+    margin: 10px;
+    width: 500px;
+}
+.horario {
+    height: auto !important;
+}
+
+#filme_sala_nome {
+    width: 300px !important;
+    margin: 0 10px 10px;
+
+}

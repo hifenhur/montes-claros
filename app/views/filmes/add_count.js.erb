@@ -1,0 +1,12 @@
+
+var textoAntes = $('.<%=@filme.id%>').text();
+
+$('.<%=@filme.id%>').fadeOut().fadeIn().text(<%= @filme.presenca %>);
+var textoDepois = $('.<%=@filme.id%>').text();
+
+if(textoAntes != textoDepois){
+}
+else
+{
+	alert("Você ja confirmou sua presença no filme <%= @filme.titulo%>")
+}

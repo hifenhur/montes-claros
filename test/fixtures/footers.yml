@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome_do_shopping: MyString
+  endereco: MyString
+  cep: MyString
+  email_sac: MyString
+  telefone: MyString
+
+two:
+  nome_do_shopping: MyString
+  endereco: MyString
+  cep: MyString
+  email_sac: MyString
+  telefone: MyString

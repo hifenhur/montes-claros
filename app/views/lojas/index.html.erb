@@ -1,0 +1,138 @@
+
+
+<div class="segura-conteudo">
+  
+  <div class="conteudo internas">
+    
+    <div class="header">
+      <h1 class="titulo" style="float: left; line-height: 13px;">Lojas</h1>
+      <div class="segura-btn-share right">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+          <a class="addthis_button_tweet" style="width: 90px"></a>        
+          <a class="addthis_counter addthis_pill_style"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-501844af04cf4b7e"></script>
+        <!-- AddThis Button END -->       
+      </div>
+      <div class="border-divisa-head clear"></div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="colLeft">
+      
+      <form class="filtrarpor">
+        <label>
+          <h2 class="titulo">Exibir lojas por:</h2>
+        </label>
+        <label>
+            <select>
+              <option>categoria</option>
+            <%@categorias.each do |c|%>
+
+              <option><%= c.nome %></option>
+            <%end%>
+          </select>
+        </label>
+
+        <label>
+          <select>
+            <option>letra</option>
+            <%= atoz = ('A' .. 'Z') %>
+            <%atoz.each do |a| %>
+            <option><%= a %></option>
+            <%end%>
+          </select>
+        </label>
+  
+        <label>
+          <select>
+            <option>localização</option>
+            <option>Piso 1</option>
+            <option>Piso 2</option>
+          </select>
+        </label>
+        <div class="clear"></div>
+      </form>
+      
+      <% @categorias.each do |c| %>
+      <div class="aba-list">
+        <h1 class="aba-titulo">
+          <span class="icon"></span>
+          <span class="text"><%= c.nome %></span>
+          <div class="clear"></div>         
+        </h1>
+        <ul class="aba-centro">
+          <%c.lojas.each do |l|%>
+          <li>
+            <span class="nome"><%= l.nome %></span>
+            <span class="piso">Piso 1</span>
+            <span class="fone"><%= l.telefone %></span>
+            <a href="<%= loja_path(l)%>" class="vejamais">veja mais</a>
+          </li>
+          <%end%>
+        </ul>
+        <img src="/assets/aba-bg-bottom.png" />
+      </div>      
+      <%end%>
+     <%= paginate @categorias %>
+      
+    
+    
+<!--
+      <div class="navegacao">
+        <span>Páginas</span>
+        <li><a href="javascript:;" class="active">1</a></li>
+        <li><a href="javascript:;">2</a></li>
+        <li><a href="javascript:;">3</a></li>     
+      </div>
+-->
+    </div>
+    
+    <div class="colRight">
+      
+      <div class="right-mapa-box">
+        <img src="/assets/img-mapa.png" class="mapa-icon" />
+        <div class="release">
+          <h2>Mapa do shopping</h2>
+          <p>Conheça a localização de todas as lojas e serviços do Montes Claros  Shopping.</p>
+          <a href="javascript:;" class="btn-secundary right">
+            <span>Faça um TOUR</span>
+          </a>
+          <div class="clear"></div>
+        </div>        
+      </div>
+      <br />
+      <div class="categorias-scroll">
+        
+        <h2 class="right-collun-title">
+          Categorias
+        </h2>
+        
+        <img src="/assets/categorias-block-top.png" />
+        <div id="content_1" class="content">
+          <ul class="list-categoria">
+            <% @categorias_menu.each do |c|%>
+              <li>
+                <a href="<%= categoria_loja_path(c)%>"><%= c.nome%></a>
+              </li>
+            <%end %>
+            
+                       
+          </ul>
+        </div>
+        <img src="/assets/categorias-block-bot.png" />
+      </div>      
+      
+    </div>
+    
+    
+    
+  </div>
+    
+      
+  <div class="clear"></div>     
+</div>
+  

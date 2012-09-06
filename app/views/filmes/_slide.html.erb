@@ -1,0 +1,15 @@
+                                    <ul id="cine-slider">
+                                      <% @filmes.each do |f|%>
+                                        <li><a href="<%= filme_path(f)%>"><img src="<%= f.imagem%>" width="252" height="354" /></a></li>
+                                      <%end%>
+                                        
+                                    </ul>
+<script src="/assets/jquery.cycle.all.js"></script>
+<script>
+( function( $ ) {
+    $( function() {
+        $( '#cine-slider' ).cycle();
+    } );
+} )( jQuery );
+</script>
+                             

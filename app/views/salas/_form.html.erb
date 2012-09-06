@@ -1,0 +1,69 @@
+<%= form_for(@sala) do |f| %>
+  <% if @sala.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sala.errors.count, "error") %> prohibited this sala from being saved:</h2>
+
+      <ul>
+      <% @sala.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :fh1 %><br />
+    <%= f.text_field :fh1 %>
+  </div>
+  <div class="field">
+    <%= f.label :fh2 %><br />
+    <%= f.text_field :fh2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fh3 %><br />
+    <%= f.text_field :fh3 %>
+  </div>
+  <div class="field">
+    <%= f.label :fh4 %><br />
+    <%= f.text_field :fh4 %>
+  </div>
+  <div class="field">
+    <%= f.label :fh5 %><br />
+    <%= f.text_field :fh5 %>
+  </div>
+  <div class="field">
+    <%= f.label :sh1 %><br />
+    <%= f.text_field :sh1 %>
+  </div>
+  <div class="field">
+    <%= f.label :sh2 %><br />
+    <%= f.text_field :sh2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sh3 %><br />
+    <%= f.text_field :sh3 %>
+  </div>
+  <div class="field">
+    <%= f.label :sh4 %><br />
+    <%= f.text_field :sh4 %>
+  </div>
+  <div class="field">
+    <%= f.label :sh5 %><br />
+    <%= f.text_field :sh5 %>
+  </div>
+  <div class="field">
+    <%= f.label :legendado %><br />
+    <%= f.check_box :legendado %>
+  </div>
+  <div class="field">
+    <%= f.label :tresD %><br />
+    <%= f.check_box :tresD %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

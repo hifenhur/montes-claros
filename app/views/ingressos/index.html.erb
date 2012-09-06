@@ -1,0 +1,27 @@
+<h1>Listing ingressos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Meia</th>
+    <th>Inteira</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingressos.each do |ingresso| %>
+  <tr>
+    <td><%= ingresso.nome %></td>
+    <td><%= ingresso.meia %></td>
+    <td><%= ingresso.inteira %></td>
+    <td><%= link_to 'Show', ingresso %></td>
+    <td><%= link_to 'Edit', edit_ingresso_path(ingresso) %></td>
+    <td><%= link_to 'Destroy', ingresso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ingresso', new_ingresso_path %>
